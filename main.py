@@ -37,7 +37,8 @@ def main():
 			while true:
 				loop()
 				print("Waiting")
-	except RuntimeException:
+	except:
+        print "Unexpected error:", sys.exc_info()[0]
 		pass
 
 if __name__ == "__main__":
