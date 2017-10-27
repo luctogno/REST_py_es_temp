@@ -32,7 +32,7 @@ def loop():
 	print("Do Stuff")
 	#temp_data = get_json_from_arduino(arduino_ip, arduino_port, path)
 	#temp_data = get_json_from_arduino("http://ip.jsontest.com", 80, "/posts/1")
-        temp_data = "{{\"temperature\":"+randomTemp()+", \"author\": \"testPI\", \"ttimestamp\": "+str(int(datetime.datetime.now().strftime("%s")))"}"
+        temp_data = "{\"temperature\":"+str(randomTemp())+", \"author\": \"testPI\", \"ttimestamp\": "+str(int(datetime.datetime.now().strftime("%s")))+"}"
 	print temp_data
 	send_data_to_es(es_index, es_type, temp_data)
 	
